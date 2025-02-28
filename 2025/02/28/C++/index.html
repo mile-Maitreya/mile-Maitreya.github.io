@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>C++笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="以Hello World!引出C++程序结构1234567#include &lt;iostream&gt; &#x2F;&#x2F;C++ 语言定义了一些头文件，这些头文件包含了程序中必需的或有用的信息。using namespace std; &#x2F;&#x2F;告诉编译器使用std命名空间int main() &#x2F;&#x2F;主函数，程序从这里开始执行&#123;    cout &lt;&lt; &quot;Hello World!&amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++笔记">
+<meta property="og:url" content="http://example.com/2025/02/28/C++/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="以Hello World!引出C++程序结构1234567#include &lt;iostream&gt; &#x2F;&#x2F;C++ 语言定义了一些头文件，这些头文件包含了程序中必需的或有用的信息。using namespace std; &#x2F;&#x2F;告诉编译器使用std命名空间int main() &#x2F;&#x2F;主函数，程序从这里开始执行&#123;    cout &lt;&lt; &quot;Hello World!&amp;q">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-02-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-28T07:02:03.757Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -69,9 +73,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-C++" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-C++" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/02/28/C++/" class="article-date">
   <time class="dt-published" datetime="2025-02-27T16:00:00.000Z" itemprop="datePublished">2025-02-28</time>
@@ -84,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/02/28/C++/">C++笔记</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      C++笔记
     </h1>
   
 
@@ -226,66 +228,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-ssh" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/02/28/ssh/" class="article-date">
-  <time class="dt-published" datetime="2025-02-27T16:00:00.000Z" itemprop="datePublished">2025-02-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/02/28/ssh/">SSH使用指南</a>
-    </h1>
+    <a href="/2025/02/28/ssh/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SSH使用指南</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="SSH使用指南"><a href="#SSH使用指南" class="headerlink" title="SSH使用指南"></a>SSH使用指南</h1><h2 id="连接方法"><a href="#连接方法" class="headerlink" title="连接方法"></a>连接方法</h2><p>使用如下命令连接至远程机器</p>
-<p><code>ssh user@remote -p port</code></p>
-<ul>
-<li>user 是你在远程机器上的用户名，如果不指定的话默认为当前用户</li>
-<li>remote 是远程机器的地址，可以是 IP或域名</li>
-<li>port 是 SSH Server 监听的端口，如果不指定的话就为默认值 22</li>
-</ul>
-<h2 id="安装-OpenSSH-Server"><a href="#安装-OpenSSH-Server" class="headerlink" title="安装 OpenSSH Server"></a>安装 OpenSSH Server</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local$ ssh user@remote -p port </span><br><span class="line">ssh: connect to host remote port 22: Connection refused</span><br></pre></td></tr></table></figure>
-
-<p>如果遇到了上面的提示,说明远程机器上可能没有安装 OpenSSH Server     </p>
-<p>执行命令<code>sudo apt-get install openssh-server</code>安装 OpenSSH Server (需要sudo权限)</p>
-<h2 id="免密码登入"><a href="#免密码登入" class="headerlink" title="免密码登入"></a>免密码登入</h2><p>通过设置SSH钥匙并将公钥上传至远程机器,我们可以实现免密码登入.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen                                  # 生成 SSH 钥匙，一路回车即可</span><br><span class="line">ssh-copy-id user@remote -p port             # 将公钥上传至远程机器</span><br></pre></td></tr></table></figure>
-
-<p>绝大多数Linux发行版都预装了ssh-copy-id ,MacOS可通过<code>brew install ssh-copy-id</code>命令快速安装.</p>
-<h2 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h2><p>我们可以通过配置别名简化SSH登入过程,例如将<code>ssh user@remote -p port</code>简化为<code>ssh a</code> ,需要在~&#x2F;.ssh&#x2F;config里追加内容:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host a</span><br><span class="line">    HostName remote</span><br><span class="line">    User user</span><br><span class="line">    Port port # 默认为22</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/02/28/ssh/" data-id="cm7ofgdfl0001pc3ibycs78nj" data-title="SSH使用指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
 
 
 </section>
